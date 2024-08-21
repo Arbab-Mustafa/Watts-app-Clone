@@ -5,6 +5,7 @@ import MessageInput from "./message-input";
 import MessageContainer from "./message-container";
 import ChatPlaceHolder from "@/components/home/chat-placeholder";
 import GroupMembersDialog from "./group-members-dialog";
+import Link from "next/link";
 
 const RightPanel = () => {
   const selectedConversation = true;
@@ -32,9 +33,9 @@ const RightPanel = () => {
           </div>
 
           <div className="flex items-center gap-7 mr-5">
-            <a href="/video-call" target="_blank">
+            <Link href="/video-call" target="_blank">
               <Video size={23} />
-            </a>
+            </Link>
             <X size={16} className="cursor-pointer" />
           </div>
         </div>
