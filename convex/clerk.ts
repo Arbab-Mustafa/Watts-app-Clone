@@ -20,5 +20,3 @@ export const fulfill = internalAction({
     return payload;
   },
 });
-
-// https://docs.convex.dev/functions/internal-functions
