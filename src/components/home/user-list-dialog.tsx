@@ -31,7 +31,7 @@ const UserListDialog = () => {
 
   const createConversation = useMutation(api.conversations.createConversation);
   const generateUploadUrl = useMutation(api.conversations.generateUploadUrl);
-  const me = useQuery(api.users.Me);
+  const me = useQuery(api.users.getMe);
   const users = useQuery(api.users.getUsers);
 
   const { setSelectedConversation } = useConversationStore();
