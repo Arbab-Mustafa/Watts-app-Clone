@@ -7,8 +7,9 @@ import { api } from "../../../convex/_generated/api";
 import { useConversationStore } from "@/store/chat-store";
 import toast from "react-hot-toast";
 import EmojiPicker, { Theme } from "emoji-picker-react";
-import MediaDropdown from "./media-dropdown";
+
 import useComponentVisible from "@/hooks/useComponentVisible";
+import MediaDropdown from "./media-dropdown";
 
 const MessageInput = () => {
   const [msgText, setMsgText] = useState("");
