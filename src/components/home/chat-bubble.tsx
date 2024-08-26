@@ -28,12 +28,8 @@ const ChatBubble = ({ me, message, previousMessage }: ChatBubbleProps) => {
     selectedConversation?.participants.includes(message.sender?._id) || false;
   const isGroup = selectedConversation?.isGroup;
   const fromMe = message.sender?._id === me._id;
-  const fromAI = message.sender?.name === "ChatGPT";
-  const bgClass = fromMe
-    ? "bg-green-chat"
-    : !fromAI
-      ? "bg-white dark:bg-gray-primary"
-      : "bg-blue-500 text-white";
+
+  const bgClass = fromMe ? "bg-green-chat" : "bg-white dark:bg-gray-primary";
 
   console.log(message.sender);
   const [open, setOpen] = useState(false);
@@ -62,15 +58,10 @@ const ChatBubble = ({ me, message, previousMessage }: ChatBubbleProps) => {
             isGroup={isGroup}
             isMember={isMember}
             message={message}
-            fromAI={fromAI}
           />
           <div
             className={`flex flex-col z-20 max-w-fit px-2 pt-1 rounded-md shadow-md relative ${bgClass}`}
           >
-            {!fromAI && <OtherMessageIndicator />}
-            {fromAI && (
-              <Bot size={16} className="absolute bottom-[2px] left-2" />
-            )}
             {<ChatAvatarActions message={message} me={me} />}
             {renderMessageContent()}
             {open && (
